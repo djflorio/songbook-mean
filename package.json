@@ -1,0 +1,19 @@
+{
+  "name": "songbook-mean",
+  "version": "0.0.1",
+  "description": "An lyric and chord sheet app.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dan Florio",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.4",
+    "express": "^4.15.4",
+    "mongoose": "^4.11.7",
+    "path": "^0.12.7"
+  }
+}
