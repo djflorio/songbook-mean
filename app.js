@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const config = require('./config/database');
-const users = require('./controllers/user');
+const users = require('./controllers/users');
 
 /*********************
  * Database          *
@@ -34,7 +34,7 @@ app.use(express.static(path.join(__dirname, 'public'))); // static files
 app.get('/', (req, res) => {
     res.send("Invalid page");
 });
-// Route all HTTP requests to /bucketlist to bucketlist controller
+// Route all HTTP requests to /users to users controller
 app.use('/users', users);
 
 /*********************

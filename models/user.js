@@ -36,8 +36,17 @@ UserSchema.methods.comparePassword = function(candidatePassword) {
     return bcrypt.compareSync(candidatePassword, this.password);
 }
 
-UserSchema.methods.getAllUsers = function(callback) {
-    
+const User = module.exports = mongoose.model('User', UserSchema);
+
+module.exports.getAllUsers = function(callback) {
+    User.find(callback);
 }
 
-module.exports = mongoose.model('User', UserSchema);
+module.exports.createUser = function(newUser, callback) {
+    newUser.save(callback);
+}
+
+module.exports.deleteUserById = function(id, callback) {
+    let query = {_id: id};
+    User.remove(query, callback);
+}
