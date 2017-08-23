@@ -1,0 +1,30 @@
+.home-header {
+    position: relative;
+    display: table;
+    height: 400px;
+    width: 100%;
+    background-image: url('../assets/img/headphone-guitar-notebook-pencil-232353751.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+
+.home-header__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 1;
+}
+
+.home-header__title {
+    position: relative;
+    font-family: 'Aladin', cursive;
+    color: white;
+    font-size: 60px;
+    display: table-cell;
+    vertical-align: middle;
+    z-index: 2;
+}
