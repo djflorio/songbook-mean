@@ -8,6 +8,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const config = require('./config/database');
 const users = require('./controllers/users');
+const songs = require('./controllers/songs');
 
 /*********************
  * Database          *
@@ -36,6 +37,7 @@ app.get('/', (req, res) => {
 });
 // Route all HTTP requests to /users to users controller
 app.use('/users', users);
+app.use('/songs', songs);
 
 /*********************
  * Initiate Server   *

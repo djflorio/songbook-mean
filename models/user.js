@@ -42,6 +42,10 @@ module.exports.getAllUsers = function(callback) {
     User.find(callback);
 }
 
+module.exports.getUserById = function(id, callback) {
+    User.findById(id, callback);
+}
+
 module.exports.createUser = function(newUser, callback) {
     newUser.save(callback);
 }

@@ -13,6 +13,17 @@ router.get('/', (req, res) => {
     });
 });
 
+router.get('/:id', (req, res) => {
+    user.getUserById(req.params.id, (err, user) => {
+        if (err) {
+            res.json({success: false, message: `Failed to load user by ID. Error: ${err}`});
+        } else {
+            res.write(JSON.stringify({success: true, user: user},null,2));
+            res.end();
+        }
+    });
+});
+
 router.post('/', (req, res, next) => {
     let newUser = new user({
         username: req.body.username,
