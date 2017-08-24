@@ -1,0 +1,132 @@
+.home-header {
+    position: relative;
+    display: table;
+    height: 400px;
+    width: 100%;
+    background-image: url('../../../assets/img/headphone-guitar-notebook-pencil-232353751.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    text-align: center;
+}
+
+.home-header__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 1;
+}
+
+.home-header__login {
+    display: block;
+    margin-top: 10px;
+    color: #efefef;
+    font-size: 12px;
+}
+
+.home-header__login-link {
+    text-decoration: underline;
+    color: #efefef;
+}
+
+.home-header__login-link:hover {
+    color: cadetblue;
+}
+
+.home-header__middle {
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+    z-index: 2;
+}
+
+.home-header__title {
+    font-family: 'Aladin', cursive;
+    padding: 0;
+    margin: 0;
+    color: white;
+    font-size: 60px;
+}
+
+.home-header__signup {
+    display: inline-block;
+    background-color: cadetblue;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    opacity: 0.9;
+}
+
+.home-header__signup:hover {
+    background-color: #8BCEDD;
+    opacity: 1;
+}
+
+.section {
+    height: 300px;
+}
+
+.section__text {
+    display: inline-block;
+    position: relative;
+    width: 50%;
+    color: #132222;
+    vertical-align: top;
+    padding: 30px;
+    box-sizing: border-box;
+    height: 100%;
+    background-color: #efefef;
+    z-index: 2;
+}
+
+.section__header {
+    margin: 0;
+}
+
+.section__image {
+    position: relative;
+    display: inline-block;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 50%;
+    z-index: 1;
+}
+
+.section__image--1 {
+    background-image: url('../../../assets/img/guitar-197790535.jpg');
+}
+
+.section__image--2 {
+    background-image: url('../../../assets/img/kids-music-7903530.jpg');
+}
+
+.section__image-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.3);
+    z-index: -1;
+}
+
+.section__triangle {
+    box-sizing: border-box;
+    width: 0;
+	height: 100%;
+	border-top: 150px solid transparent;
+	border-bottom: 150px solid transparent;
+}
+
+.section__triangle--right {
+    border-left: 30px solid #efefef;
+}
+
+.section__triangle--left {
+    float: right;
+    border-right: 30px solid #efefef;
+}

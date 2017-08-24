@@ -1,0 +1,10 @@
+.signup-form {
+    padding: 20px;
+}
+
+.signup-form__input-text {
+    display: block;
+    padding: 4px;
+    margin-bottom: 5px;
+    width: 200px;
+}

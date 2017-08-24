@@ -1,0 +1,11 @@
+{{ diagnostic }}
+<form class="signup-form" #signupForm="ngForm">
+    <input type="text" class="signup-form__input-text" id="username" placeholder="username" required
+        [(ngModel)]="model.username" name="username">
+    <input type="text" class="signup-form__input-text" id="email" placeholder="email" required
+        [(ngModel)]="model.email" name="email">
+    <input type="password" class="signup-form__input-text" id="password" placeholder="password" required
+        [(ngModel)]="model.password" name="password">
+    <input type="password" class="signup-form__input-text" id="confirm_password" placeholder="confirm password" required>
+    <button type="submit" class="signup-form__button-submit">Sign Up</button>
+</form>
