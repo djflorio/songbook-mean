@@ -6,6 +6,7 @@
     background-image: url('../assets/img/headphone-guitar-notebook-pencil-232353751.jpg');
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     text-align: center;
 }
 
@@ -19,12 +20,29 @@
     z-index: 1;
 }
 
-.home-header__title {
+.home-header__middle {
     position: relative;
-    font-family: 'Aladin', cursive;
-    color: white;
-    font-size: 60px;
     display: table-cell;
     vertical-align: middle;
     z-index: 2;
+}
+
+.home-header__title {
+    font-family: 'Aladin', cursive;
+    padding: 0;
+    margin: 0;
+    color: white;
+    font-size: 60px;
+}
+
+.home-header__signup {
+    display: inline-block;
+    background-color: cadetblue;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.home-header__signup:hover {
+    background-color: #8BCEDD;
 }
