@@ -1,0 +1,14 @@
+.navbar {
+    position: relative;
+    height: 40px;
+    background-color: cadetblue;
+}
+
+.navbar__title {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    font-family: 'Aladin', cursive;
+    font-size: 25px;
+    color: white;
+}

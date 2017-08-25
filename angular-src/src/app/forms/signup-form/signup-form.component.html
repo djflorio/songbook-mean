@@ -1,8 +1,28 @@
 <form [formGroup]="signupForm" novalidate>
-    <input type="text" class="signup-form__input-text" placeholder="username" formControlName="username">
+    <input type="text" class="signup-form__input-text" id="username" placeholder="username" formControlName="username">
+    <div class="signup-form__message-area">
+        <span class="message message--error" *ngIf="username.invalid && username.errors.required && username.touched">
+            Username is required
+        </span>
+    </div>
     <input type="text" class="signup-form__input-text" placeholder="email" formControlName="email">
+    <div class="signup-form__message-area">
+        <span class="message message--error" *ngIf="email.invalid && email.errors.email && email.touched">
+            Please enter a valid email
+        </span>
+    </div>
     <input type="password" class="signup-form__input-text" placeholder="password" formControlName="password">
+    <div class="signup-form__message-area">
+        <span class="message message--error" *ngIf="password.invalid && password.errors.minlength && password.touched">
+            Passwords must be at least 8 characters
+        </span>
+        <span class="message message--error" *ngIf="password.invalid && password.errors.required && password.touched">
+            Password required
+        </span>
+    </div>
     <input type="password" class="signup-form__input-text" placeholder="confirm password" formControlName="confirmPassword">
+    <div class="signup-form__message-area">
+            
+    </div>
+    <button type="submit" class="signup-form__submit" [disabled]="signupForm.invalid">Sign Up</button>
 </form>
-<p>Form value: {{ signupForm.value | json }}</p>
-<p>Form status: {{ signupForm.status | json }}</p>

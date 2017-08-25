@@ -1,0 +1,38 @@
+.content {
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.half-column {
+    display: inline-block;
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.signup-text {
+    vertical-align: top;
+}
+
+.signup-text__header {
+    margin: 0 0 10px 0;
+}
+
+.signup-text__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.signup-text__list-item {
+    padding-left: 1em; 
+    text-indent: -.7em;
+    margin-bottom: 7px;
+}
+
+.signup-text__list-item::before {
+    content: "\002022";
+    color: cadetblue;
+    padding-right: 4px;
+}

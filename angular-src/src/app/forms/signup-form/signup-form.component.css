@@ -5,14 +5,31 @@
 .signup-form__input-text {
     display: block;
     padding: 4px;
-    margin-bottom: 5px;
     width: 200px;
 }
 
-.ng-valid[required], .ng-valid.required  {
+.ng-valid:not(form) {
     border-left: 5px solid #42A948; /* green */
 }
 
 .ng-invalid:not(form).ng-touched  {
     border-left: 5px solid #a94442; /* red */
+}
+
+.signup-form__message-area {
+    position: relative;
+    height: 20px;
+    vertical-align: top;
+}
+
+.message {
+    display: inline-block;
+    top: 0;
+    left: 0;
+    position: absolute;
+    font-size: 11px;
+}
+
+.message--error {
+    color: firebrick;
 }

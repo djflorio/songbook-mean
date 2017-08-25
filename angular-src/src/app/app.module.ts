@@ -8,6 +8,7 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { HomeComponent } from './pages/home/home.component';
 import { FooterComponent } from './partials/footer/footer.component';
 import { SignupFormComponent } from './forms/signup-form/signup-form.component';
+import { NavbarComponent } from './partials/navbar/navbar.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -22,7 +23,8 @@ const appRoutes: Routes = [
     SignupComponent,
     HomeComponent,
     FooterComponent,
-    SignupFormComponent
+    SignupFormComponent,
+    NavbarComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes, { enableTracing: true }),
