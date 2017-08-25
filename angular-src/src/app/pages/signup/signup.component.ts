@@ -7,19 +7,10 @@ import { User } from '../../models/user';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  model = new User("", "", "");
-  submitted = false;
 
   constructor() { }
 
   ngOnInit() {
   }
-
-  onSubmit() {
-    this.submitted = true;
-  }
-
-  // TODO: Remove this when we're done
-  get diagnostic() { return JSON.stringify(this.model); }
-
+  
 }

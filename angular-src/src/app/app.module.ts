@@ -1,12 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FormsModule }   from '@angular/forms';
+import { ReactiveFormsModule }   from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { HomeComponent } from './pages/home/home.component';
 import { FooterComponent } from './partials/footer/footer.component';
+import { SignupFormComponent } from './forms/signup-form/signup-form.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -20,12 +21,13 @@ const appRoutes: Routes = [
     AppComponent,
     SignupComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    SignupFormComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes, { enableTracing: true }),
     BrowserModule,
-    FormsModule
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

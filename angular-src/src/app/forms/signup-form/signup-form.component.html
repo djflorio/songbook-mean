@@ -1,0 +1,8 @@
+<form [formGroup]="signupForm" novalidate>
+    <input type="text" class="signup-form__input-text" placeholder="username" formControlName="username">
+    <input type="text" class="signup-form__input-text" placeholder="email" formControlName="email">
+    <input type="password" class="signup-form__input-text" placeholder="password" formControlName="password">
+    <input type="password" class="signup-form__input-text" placeholder="confirm password" formControlName="confirmPassword">
+</form>
+<p>Form value: {{ signupForm.value | json }}</p>
+<p>Form status: {{ signupForm.status | json }}</p>
