@@ -11,18 +11,22 @@
             Please enter a valid email
         </span>
     </div>
-    <input type="password" class="signup-form__input-text" placeholder="password" formControlName="password">
-    <div class="signup-form__message-area">
-        <span class="message message--error" *ngIf="password.invalid && password.errors.minlength && password.touched">
-            Passwords must be at least 8 characters
-        </span>
-        <span class="message message--error" *ngIf="password.invalid && password.errors.required && password.touched">
-            Password required
-        </span>
-    </div>
-    <input type="password" class="signup-form__input-text" placeholder="confirm password" formControlName="confirmPassword">
-    <div class="signup-form__message-area">
-            
+    <div formGroupName="passwords" class="form-group">
+        <input type="password" class="signup-form__input-text" placeholder="password" formControlName="password">
+        <div class="signup-form__message-area">
+            <span class="message message--error" *ngIf="password.invalid && password.errors.minlength && password.touched">
+                Passwords must be at least 8 characters
+            </span>
+            <span class="message message--error" *ngIf="password.invalid && password.errors.required && password.touched">
+                Password required
+            </span>
+        </div>
+        <input type="password" class="signup-form__input-text pw-confirmation" placeholder="confirm password" formControlName="confirmPass">
+        <div class="signup-form__message-area">
+            <span class="message message--error" *ngIf="signupForm.hasError('notSame', 'passwords')">
+                Passwords do not match
+            </span>
+        </div>
     </div>
     <button type="submit" class="signup-form__submit" [disabled]="signupForm.invalid">Sign Up</button>
 </form>

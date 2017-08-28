@@ -18,8 +18,10 @@ export class SignupFormComponent implements OnInit {
     this.signupForm = this.fb.group({
       username: ['', Validators.required],
       email: ['', Validators.email],
-      password: ['', ([Validators.minLength(8), Validators.required])],
-      confirmPassword: ['', Validators.required]
+      passwords: this.fb.group({
+        password: ['', ([Validators.minLength(8), Validators.required])],
+        confirmPass: ['', Validators.required]
+      }, {validator: this.checkPasswords})
     });
   }
 
@@ -27,9 +29,17 @@ export class SignupFormComponent implements OnInit {
     this.createForm();
   }
 
+  checkPasswords(group: FormGroup) {
+    let pass = group.controls.password.value;
+    let confirmPass = group.controls.confirmPass.value;
+
+    return pass === confirmPass ? null : { notSame: true }
+  }
+
   get username() { return this.signupForm.get('username'); }
   get email() { return this.signupForm.get('email'); }
-  get password() { return this.signupForm.get('password'); }
-  get confirmPassword() { return this.signupForm.get('confirmPassword'); }
+  get password() { return this.signupForm.get('passwords.password'); }
+  get confirmPassword() { return this.signupForm.get('passwords.confirmPass'); }
+
 
 }
