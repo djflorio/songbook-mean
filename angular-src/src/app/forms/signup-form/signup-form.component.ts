@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { User } from '../../models/User';
+
+import { SignupService } from '../../services/signup.service';
 
 @Component({
   selector: 'app-signup-form',
@@ -9,8 +12,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class SignupFormComponent implements OnInit {
 
   signupForm: FormGroup;
+  private newUser: User;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private signupServ: SignupService) {
     
   }
 
@@ -34,6 +38,22 @@ export class SignupFormComponent implements OnInit {
     let confirmPass = group.controls.confirmPass.value;
 
     return pass === confirmPass ? null : { notSame: true }
+  }
+
+  public onSubmit({ value, valid }: { value: any, valid: boolean }) {
+    this.newUser = {
+      username: value.username,
+      email: value.email,
+      password: value.passwords.password
+    }
+    console.log(value);
+    this.signupServ.addUser(this.newUser).subscribe(
+      response => {
+        console.log(response);
+        if (response.success == true)
+          console.log("GOOD");
+      }
+    )
   }
 
   get username() { return this.signupForm.get('username'); }

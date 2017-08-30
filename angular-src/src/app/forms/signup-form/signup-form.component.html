@@ -1,4 +1,4 @@
-<form [formGroup]="signupForm" novalidate>
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit(signupForm)" novalidate>
     <input type="text" class="signup-form__input-text" id="username" placeholder="username" formControlName="username">
     <div class="signup-form__message-area">
         <span class="message message--error" *ngIf="username.invalid && username.errors.required && username.touched">
