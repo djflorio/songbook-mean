@@ -8,6 +8,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const config = require('./config/database');
 const sb_env = require("./config/env");
+const expressSession = require('express-session');
 const users = require('./controllers/users');
 const songs = require('./controllers/songs');
 

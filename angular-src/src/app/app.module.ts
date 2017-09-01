@@ -14,10 +14,16 @@ import { NavbarComponent } from './partials/navbar/navbar.component';
 import { customHttpProvider } from './services/custom-http.service';
 import { SignupService } from './services/signup.service';
 import { UserService } from './services/user.service';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+
+import { AuthGuard } from './guards/auth.guard';
+import { LoginComponent } from './pages/login/login.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'signup', component: SignupComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '*', redirectTo: '/home', pathMatch: 'full' }
 ]
@@ -29,7 +35,9 @@ const appRoutes: Routes = [
     HomeComponent,
     FooterComponent,
     SignupFormComponent,
-    NavbarComponent
+    NavbarComponent,
+    DashboardComponent,
+    LoginComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes, { enableTracing: true }),
@@ -37,7 +45,7 @@ const appRoutes: Routes = [
     HttpModule,
     ReactiveFormsModule
   ],
-  providers: [customHttpProvider, SignupService, UserService],
+  providers: [customHttpProvider, SignupService, UserService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
