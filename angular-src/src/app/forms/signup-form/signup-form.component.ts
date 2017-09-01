@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { User } from '../../models/User';
+import { Router } from '@angular/router';
 
-import { SignupService } from '../../services/signup.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-signup-form',
@@ -14,7 +15,7 @@ export class SignupFormComponent implements OnInit {
   signupForm: FormGroup;
   private newUser: User;
 
-  constructor(private fb: FormBuilder, private signupServ: SignupService) {
+  constructor(private router: Router, private fb: FormBuilder, private userService: UserService) {
     
   }
 
@@ -46,14 +47,15 @@ export class SignupFormComponent implements OnInit {
       email: value.email,
       password: value.passwords.password
     }
-    console.log(value);
-    this.signupServ.addUser(this.newUser).subscribe(
-      response => {
-        console.log(response);
-        if (response.success == true)
-          console.log("GOOD");
-      }
-    )
+    this.userService.create(this.newUser)
+      .subscribe(
+        data => {
+          this.router.navigate(['/login']);
+        },
+        error => {
+          console.log("ERROR");
+        }
+      );
   }
 
   get username() { return this.signupForm.get('username'); }

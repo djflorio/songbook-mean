@@ -12,7 +12,6 @@ import { SignupFormComponent } from './forms/signup-form/signup-form.component';
 import { NavbarComponent } from './partials/navbar/navbar.component';
 
 import { customHttpProvider } from './services/custom-http.service';
-import { SignupService } from './services/signup.service';
 import { UserService } from './services/user.service';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
@@ -45,7 +44,7 @@ const appRoutes: Routes = [
     HttpModule,
     ReactiveFormsModule
   ],
-  providers: [customHttpProvider, SignupService, UserService, AuthGuard],
+  providers: [customHttpProvider, UserService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
