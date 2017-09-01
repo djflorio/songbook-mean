@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const config = require('./config/database');
+const sb_env = require("./config/env");
 const users = require('./controllers/users');
 const songs = require('./controllers/songs');
 
@@ -28,6 +29,7 @@ app.use(cors()); // allows cross-site origin requests
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public'))); // static files
+app.use(expressSession({secret: sb_env.session_secret}));
 
 /*********************
  * Routes            *

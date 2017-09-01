@@ -11,6 +11,13 @@
         </span>
     </div>
 </div>
+<div class="debug-section">
+    <ul>
+        <li *ngFor="let user of users">
+            {{ user.username }} - {{ user.email }} - <a (click)="deleteUser(user._id)">delete</a>
+        </li>
+    </ul>
+</div>
 <div class="section">
     <div class="section__text">
         <h1 class="section__header">

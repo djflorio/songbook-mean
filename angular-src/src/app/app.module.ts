@@ -11,7 +11,9 @@ import { FooterComponent } from './partials/footer/footer.component';
 import { SignupFormComponent } from './forms/signup-form/signup-form.component';
 import { NavbarComponent } from './partials/navbar/navbar.component';
 
+import { customHttpProvider } from './services/custom-http.service';
 import { SignupService } from './services/signup.service';
+import { UserService } from './services/user.service';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -35,7 +37,7 @@ const appRoutes: Routes = [
     HttpModule,
     ReactiveFormsModule
   ],
-  providers: [SignupService],
+  providers: [customHttpProvider, SignupService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
