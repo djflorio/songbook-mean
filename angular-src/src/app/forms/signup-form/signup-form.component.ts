@@ -15,8 +15,10 @@ export class SignupFormComponent implements OnInit {
   signupForm: FormGroup;
   private newUser: User;
 
-  constructor(private router: Router, private fb: FormBuilder, private userService: UserService) {
-    
+  constructor(private router: Router, private fb: FormBuilder, private userService: UserService) { }
+
+  ngOnInit() {
+    this.createForm();
   }
 
   createForm() {
@@ -28,10 +30,6 @@ export class SignupFormComponent implements OnInit {
         confirmPass: ['', Validators.required]
       }, {validator: this.checkPasswords})
     });
-  }
-
-  ngOnInit() {
-    this.createForm();
   }
 
   checkPasswords(group: FormGroup) {

@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var bcrypt = require('bcrypt');
+var Q = require('q');
+var jwt = require('jsonwebtoken');
+var env = require('../config/env');
 
 var SALT_WORK_FACTOR = 10;
 
@@ -53,4 +56,25 @@ module.exports.createUser = function(newUser, callback) {
 module.exports.deleteUserById = function(id, callback) {
     let query = {_id: id};
     User.remove(query, callback);
+}
+
+module.exports.authenticate = function(username, password) {
+    var deferred = Q.defer();
+
+    User.findOne({ username: username }, function (err, user) {
+        console.log("hash?");
+        console.log(user.hash);
+        if (err) deferred.reject(err.name + ': ' + err.message);
+        if (user && bcrypt.compareSync(password, user.password)) {
+            deferred.resolve({
+                _id: user._id,
+                username: user.username,
+                email: user.email,
+                token: jwt.sign({ sub: user._id }, env.session_secret)
+            });
+        } else {
+            deferred.resolve();
+        }
+    });
+    return deferred.promise;
 }

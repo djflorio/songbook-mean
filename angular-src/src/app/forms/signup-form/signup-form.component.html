@@ -18,7 +18,7 @@
                 Passwords must be at least 8 characters
             </span>
             <span class="message message--error" *ngIf="password.invalid && password.errors.required && password.touched">
-                Password required
+                Password is required
             </span>
         </div>
         <input type="password" class="signup-form__input-text pw-confirmation" placeholder="confirm password" formControlName="confirmPass">

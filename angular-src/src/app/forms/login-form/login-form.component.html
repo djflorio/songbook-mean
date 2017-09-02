@@ -1,0 +1,15 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)" novalidate>
+  <input type="text" class="login-form__input-text" id="username" placeholder="username" formControlName="username">
+  <div class="login-form__message-area">
+      <span class="message message--error" *ngIf="username.invalid && username.errors.required && username.touched">
+          Username is required
+      </span>
+  </div>
+  <input type="password" class="login-form__input-text" placeholder="password" formControlName="password">
+  <div class="login-form__message-area">
+      <span class="message message--error" *ngIf="password.invalid && password.errors.required && password.touched">
+          Password is required
+      </span>
+  </div>
+  <button type="submit" class="login-form__submit" [disabled]="loginForm.invalid">Login</button>
+</form>

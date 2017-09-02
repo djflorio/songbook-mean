@@ -17,6 +17,8 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 import { AuthGuard } from './guards/auth.guard';
 import { LoginComponent } from './pages/login/login.component';
+import { LoginFormComponent } from './forms/login-form/login-form.component';
+import { AuthenticationService } from './services/authentication.service';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -36,7 +38,8 @@ const appRoutes: Routes = [
     SignupFormComponent,
     NavbarComponent,
     DashboardComponent,
-    LoginComponent
+    LoginComponent,
+    LoginFormComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes, { enableTracing: true }),
@@ -44,7 +47,7 @@ const appRoutes: Routes = [
     HttpModule,
     ReactiveFormsModule
   ],
-  providers: [customHttpProvider, UserService, AuthGuard],
+  providers: [customHttpProvider, UserService, AuthGuard, AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

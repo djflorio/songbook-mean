@@ -39,6 +39,20 @@ router.post('/', (req, res, next) => {
     });
 });
 
+router.post('/authenticate', (req, res) => {
+    user.authenticate(req.body.username, req.body.password)
+        .then(function(user) {
+            if (user) {
+                res.send(user);
+            } else {
+                res.status(400).send('Username or password incorrect');
+            }
+        })
+        .catch(function (err) {
+            res.status(400).send(err);
+        });
+});
+
 router.delete('/:id', (req, res, next) => {
     let id = req.params.id;
     user.deleteUserById(id, (err, user) => {
