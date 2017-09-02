@@ -19,11 +19,13 @@ import { AuthGuard } from './guards/auth.guard';
 import { LoginComponent } from './pages/login/login.component';
 import { LoginFormComponent } from './forms/login-form/login-form.component';
 import { AuthenticationService } from './services/authentication.service';
+import { LogoutComponent } from './pages/logout/logout.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'logout', component: LogoutComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '*', redirectTo: '/home', pathMatch: 'full' }
@@ -39,7 +41,8 @@ const appRoutes: Routes = [
     NavbarComponent,
     DashboardComponent,
     LoginComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    LogoutComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes, { enableTracing: true }),
