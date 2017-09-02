@@ -1,3 +1,4 @@
 <div class="navbar">
   <a routerLink="/" class="navbar__title">SongBinder</a>
+  <a *ngIf="currentUser" routerLink="/dashboard" class="navbar__username">{{ currentUser.username }}</a>
 </div>

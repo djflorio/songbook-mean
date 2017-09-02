@@ -12,3 +12,10 @@
     font-size: 25px;
     color: white;
 }
+
+.navbar__username {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: white;
+}
