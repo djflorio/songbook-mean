@@ -13,6 +13,7 @@ export class LogoutComponent implements OnInit {
 
   ngOnInit() {
     this.authenticationService.logout();
+    window.location.href='/login';
   }
 
 }

@@ -45,7 +45,7 @@ const appRoutes: Routes = [
     LogoutComponent
   ],
   imports: [
-    RouterModule.forRoot(appRoutes, { enableTracing: true }),
+    RouterModule.forRoot(appRoutes, { enableTracing: false }),
     BrowserModule,
     HttpModule,
     ReactiveFormsModule

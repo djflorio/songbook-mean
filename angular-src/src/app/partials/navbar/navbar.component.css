@@ -1,7 +1,9 @@
 .navbar {
     position: relative;
+    display: block;
     height: 40px;
     background-color: cadetblue;
+    z-index: 9999;
 }
 
 .navbar__title {
@@ -18,4 +20,28 @@
     top: 10px;
     right: 10px;
     color: white;
+    cursor: pointer;
+}
+
+.navbar__menu {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    background-color: cadetblue;
+}
+
+.navbar__menu-item {
+    text-align: right;
+    font-size: 14px;
+}
+
+.navbar__menu-item a {
+    color: white;
+}
+
+.navbar__menu-item a:hover {
+    color: black;
 }

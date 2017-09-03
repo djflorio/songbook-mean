@@ -9,10 +9,15 @@ import { User } from '../../models/user';
 })
 export class NavbarComponent implements OnInit {
   currentUser: User;
+  menuVisible = false;
   constructor() { }
 
   ngOnInit() {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  }
+
+  toggleMenu() {
+    this.menuVisible = !this.menuVisible;
   }
 
 }

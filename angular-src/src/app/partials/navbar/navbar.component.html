@@ -1,4 +1,10 @@
 <div class="navbar">
   <a routerLink="/" class="navbar__title">SongBinder</a>
-  <a *ngIf="currentUser" routerLink="/dashboard" class="navbar__username">{{ currentUser.username }}</a>
+  <div *ngIf="currentUser">
+    <span (click)="toggleMenu()" class="navbar__username">{{ currentUser.username }}</span>
+    <ul [hidden]="!menuVisible" class="navbar__menu">
+      <li class="navbar__menu-item"><a routerLink="/dashboard">Dashboard</a></li>
+      <li class="navbar__menu-item"><a routerLink="/logout">Logout</a>
+    </ul>
+  </div>
 </div>

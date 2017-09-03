@@ -44,7 +44,7 @@ export class LoginFormComponent implements OnInit {
     this.authenticationService.login(value.username, value.password)
       .subscribe(
         data => {
-          this.router.navigate([this.returnUrl]);
+          window.location.href=this.returnUrl;
         },
         error => {
           console.log(error);
