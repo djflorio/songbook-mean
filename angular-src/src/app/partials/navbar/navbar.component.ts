@@ -8,11 +8,11 @@ import { User } from '../../models/user';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  @Input() currentUser: User;
-
+  currentUser: User;
   constructor() { }
 
   ngOnInit() {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
   }
 
 }

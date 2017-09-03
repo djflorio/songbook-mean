@@ -28,7 +28,7 @@ const appRoutes: Routes = [
   { path: 'logout', component: LogoutComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: '*', redirectTo: '/home', pathMatch: 'full' }
+  { path: '**', redirectTo: '/home', pathMatch: 'full' }
 ]
 
 @NgModule({

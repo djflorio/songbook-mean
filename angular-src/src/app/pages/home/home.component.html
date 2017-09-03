@@ -2,13 +2,20 @@
     <div class="home-header__overlay"></div>
     <div class="home-header__middle">
         <h1 class="home-header__title">{{ title }}</h1><br>
-        <a routerLink="/signup" class="home-header__signup">
-            Get started for free
-        </a>
-        <span class="home-header__login">
-            Already have an account?
-            <a routerLink="/login" class="home-header__login-link">login</a>
-        </span>
+        <div *ngIf="!currentUser">
+            <a routerLink="/signup" class="home-header__signup">
+                Get started for free
+            </a>
+            <span class="home-header__login">
+                Already have an account?
+                <a routerLink="/login" class="home-header__login-link">login</a>
+            </span>
+        </div>
+        <div *ngIf="currentUser">
+            <a routerLink="/dashboard" class="home-header__signup">
+                Go to dashboard
+            </a>
+        </div>
     </div>
 </div>
 <div class="section">

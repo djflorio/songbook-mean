@@ -11,5 +11,5 @@
           Password is required
       </span>
   </div>
-  <button type="submit" class="login-form__submit" [disabled]="loginForm.invalid">Login</button>
+  <button [disabled]="loading" type="submit" class="login-form__submit" [disabled]="loginForm.invalid">Login</button>
 </form>
