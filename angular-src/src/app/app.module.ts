@@ -13,6 +13,7 @@ import { NavbarComponent } from './partials/navbar/navbar.component';
 
 import { customHttpProvider } from './services/custom-http.service';
 import { UserService } from './services/user.service';
+import { SongService } from './services/song.service';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 import { AuthGuard } from './guards/auth.guard';
@@ -50,7 +51,13 @@ const appRoutes: Routes = [
     HttpModule,
     ReactiveFormsModule
   ],
-  providers: [customHttpProvider, UserService, AuthGuard, AuthenticationService],
+  providers: [
+    customHttpProvider,
+    UserService,
+    SongService,
+    AuthGuard,
+    AuthenticationService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

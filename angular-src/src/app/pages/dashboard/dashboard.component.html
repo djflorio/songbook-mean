@@ -1,3 +1,8 @@
 <p>
   Welcome to your dashboard, {{ currentUser.username }}!
 </p>
+<ul>
+  <li *ngFor="let song of songs">
+    {{ song.title }}
+  </li>
+</ul>
