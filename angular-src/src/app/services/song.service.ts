@@ -17,6 +17,10 @@ export class SongService {
     return this.http.get('/songs/user/' + _id).map((response: Response) => response.json());
   }
 
+  getSongById(_id: string) {
+    return this.http.get('/songs/' + _id).map((response: Response) => response.json());
+  }
+
 }
 
 

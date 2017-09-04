@@ -21,6 +21,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { LoginFormComponent } from './forms/login-form/login-form.component';
 import { AuthenticationService } from './services/authentication.service';
 import { LogoutComponent } from './pages/logout/logout.component';
+import { SongComponent } from './pages/song/song.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -28,6 +29,7 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: 'song/:id', component: SongComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', redirectTo: '/home', pathMatch: 'full' }
 ]
@@ -43,7 +45,8 @@ const appRoutes: Routes = [
     DashboardComponent,
     LoginComponent,
     LoginFormComponent,
-    LogoutComponent
+    LogoutComponent,
+    SongComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes, { enableTracing: false }),

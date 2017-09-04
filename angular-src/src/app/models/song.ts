@@ -14,3 +14,20 @@ export interface Song {
     ];
     keywords: string[];
 }
+
+export interface Block {
+    chord: string;
+    word: string;
+}
+
+export interface ParsedLine {
+    blocks: Block[];
+}
+
+export interface ParsedSection {
+    lines: ParsedLine[];
+}
+
+export interface ParsedSong {
+    sections: ParsedSection[];
+}

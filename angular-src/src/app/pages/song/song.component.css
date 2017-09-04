@@ -1,0 +1,40 @@
+.paper {
+    position: relative;
+    padding: 40px 70px;
+    box-sizing: border-box;
+    background-color: #efefef;
+    margin: 20px auto;
+    box-shadow: 2px 2px 3px #bbb;
+    max-width: 8.5in;
+}
+
+.song__title {
+    font-family: 'Caveat', cursive;
+    text-align: center;
+}
+
+.song__artist {
+    font-family: 'Neucha', cursive;
+    text-align: center;
+}
+
+.song__section {
+    margin-bottom: 20px;
+}
+
+.section__line {
+}
+
+.line__block {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 4px;
+}
+
+.block__word,
+.block__chord {
+    display: block;
+    white-space:pre;
+    min-height: 20px;
+    font-family: monospace;
+}

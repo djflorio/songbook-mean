@@ -13,6 +13,17 @@ router.get('/', (req, res) => {
     });
 });
 
+router.get('/:id', (req, res) => {
+    song.findOne({ '_id': req.params.id }, (err, song) => {
+        if (err) {
+            res.json({success: false, message: `Failed to load song by ID. Error: ${err}`});
+        } else {
+            res.write(JSON.stringify({success: true, song: song},null,2));
+            res.end();
+        }
+    });
+});
+
 router.get('/user/:id', (req, res) => {
     song.getSongsByUserId(req.params.id, (err, songs) => {
         if (err) {
