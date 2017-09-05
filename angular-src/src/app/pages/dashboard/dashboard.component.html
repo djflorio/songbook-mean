@@ -3,6 +3,6 @@
 </p>
 <ul>
   <li *ngFor="let song of songs">
-    {{ song.title }}
+    <a [routerLink]="['/song', song._id]">{{ song.title }}</a>
   </li>
 </ul>
