@@ -52,4 +52,14 @@ router.post('/', (req, res, next) => {
     });
 });
 
+router.put('/:id', (req, res, next) => {
+    song.updateSongById(req.params.id, req.body, (err, song) => {
+        if (err) {
+            res.json({success: false, message: `Failed to update song. Error: ${err}`});
+        } else {
+            res.json({success: true, message: "Updated successfully."});
+        }
+    });
+});
+
 module.exports = router;
