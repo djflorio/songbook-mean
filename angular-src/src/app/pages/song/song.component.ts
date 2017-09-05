@@ -13,7 +13,7 @@ export class SongComponent implements OnInit {
   song: Song;
   id: string;
   sections: ParsedSection[] = [];
-
+  editing: boolean = false;
 
   constructor(private route: ActivatedRoute, private songService: SongService) { }
 
@@ -52,6 +52,10 @@ export class SongComponent implements OnInit {
       this.sections.push(section);
     }
     console.log(this.sections);
+  }
+
+  toggleEditing() {
+    this.editing = !this.editing;
   }
 
 }

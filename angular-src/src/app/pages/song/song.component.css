@@ -1,3 +1,16 @@
+.top-buttons {
+    padding: 20px;
+    text-align: right;
+}
+
+.top-button {
+    display: inline-block;
+    background-color: cadetblue;
+    color: white;
+    padding: 3px 6px;
+    cursor: pointer;
+}
+
 .paper {
     position: relative;
     padding: 40px 70px;
