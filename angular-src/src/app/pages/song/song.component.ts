@@ -51,7 +51,6 @@ export class SongComponent implements OnInit {
       var section: ParsedSection = {lines};
       this.sections.push(section);
     }
-    console.log(this.sections);
   }
 
   toggleEditing() {

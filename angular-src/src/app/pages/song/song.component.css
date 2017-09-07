@@ -52,8 +52,19 @@
     min-height: 20px;
     font-family: 'Inconsolata', monospace;
     font-size: 17px;
+    min-width: 5px;
 }
 
 .block__chord {
     color: cadetblue;
+}
+
+.block__word--editing {
+    border: solid 0.5px #ccc;
+}
+
+.block__chord--editing {
+    border-top: solid 0.5px #ccc;
+    border-left: solid 0.5px #ccc;
+    border-right: solid 0.5px #ccc;
 }
